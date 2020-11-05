@@ -7,6 +7,7 @@ import java.awt.event.WindowEvent;
 public class guiBtnSkeleton{                               //changes the background color of each JRadioButton based on each
 
     JFrame frame;                               //This is my JFrame named frame
+    
 
     //JPanel "north" will be placed in the North using layout manager and will have a "northTexField"(set to uneditable)
     public static JPanel north;
@@ -75,11 +76,18 @@ public class guiBtnSkeleton{                               //changes the backgro
 
 
         frame = new JFrame("POS ACCESS CENTER"); //JFrame, "frame" is now titled
-        frame.setAlwaysOnTop(true);     //This locks the GUI over the top of all other windows
-        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        //frame.setAlwaysOnTop(true);     //This locks the GUI over the top of all other windows
+
+        //temporarily disable exit event catcher for now
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE/*DO_NOTHING_ON_CLOSE*/);
+
+        frame.setLocation(128,0);
+        //frame.setUndecorated(true); //remove windows border,we don't want user hitting the close button
+        //frame.setBackground(Color.decode("#ffffff"));
 
 
-        frame.addWindowListener(new WindowAdapter() {
+        //temporarily disable exit event catcher for now
+        /*frame.addWindowListener(new WindowAdapter() {
         @Override
         public void windowClosing(WindowEvent e){
             if(JOptionPane.showConfirmDialog(frame,"Are you sure ?") == JOptionPane.YES_OPTION);
@@ -90,15 +98,19 @@ public class guiBtnSkeleton{                               //changes the backgro
             frame.dispose();
         }
 
-        });
+        });*/
 
         north = new JPanel(); // creates a new panel "north" to be put inside the north using layout manager
+        north.setBorder(BorderFactory.createLineBorder(Color.black)); //just to see for now
 
         south = new JPanel(); // JPanel "southPanel" is a new JPanel
+        south.setBorder(BorderFactory.createLineBorder(Color.black)); //just to see for now
 
         mainBtnPanel = new JPanel();
+        mainBtnPanel.setBorder(BorderFactory.createLineBorder(Color.black)); //just to see for now
 
         empPortalPanel = new JPanel();
+
 
         simPanel = new JPanel();
 
@@ -116,7 +128,9 @@ public class guiBtnSkeleton{                               //changes the backgro
         salePriceTextField = new TextField();
         supplierTextField = new TextField();
 
-        northTextArea = new TextArea("This is where simDB is displayed");
+//this has massive texts to check that the scrolling feature works
+//make this textarea heigher by adding more columns
+        northTextArea = new TextArea("This is where simDB is displayed\n checking new lineecking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line\n checking new line");
 
         buildNorth();                   // build the north JPanel
 
@@ -163,7 +177,7 @@ public class guiBtnSkeleton{                               //changes the backgro
         south.add(crudTextFieldPanel);
         crudTextFieldPanel.setVisible(false);
 
-        frame.setSize(800, 200);
+        frame.setSize(1024, 768);
 
         //frame.pack();                   // This condenses the GUI to have no unnecessary space
        // frame.setDefaultCloseOperation(EXIT_ON_CLOSE); //This exits the program when the JFrame is closed

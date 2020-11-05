@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - guiBtnSkeleton",
+            "request": "launch",
+            "mainClass": "guiBtnSkeleton",
+            "projectName": "project1"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Project1Application",
             "request": "launch",
             "mainClass": "com.cs3250p1.project1.Project1Application",
