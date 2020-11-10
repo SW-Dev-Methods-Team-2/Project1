@@ -108,3 +108,16 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
   }
+
+.sharkdab-image {
+    
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.sharkdab-item-wrapper {
+    display: block;
+}

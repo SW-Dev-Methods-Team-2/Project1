@@ -52,11 +52,11 @@ require_once "orderconfirmationemail.php";
     <div class="content-wrapper">
        <div class="order-form-wrapper">
             <h1>Thank you for your order!</h1>
-            <h1>Your order of <?php echo htmlspecialchars($_SESSION["quantity"]); ?> <?php echo htmlspecialchars($_SESSION["itemid"]); ?> is being processed</h1>
+            <h1>Your order of Item ID#: <?php echo htmlspecialchars($_SESSION["itemid"]); ?> Quantity: <?php echo htmlspecialchars($_SESSION["quantity"]); ?> is being processed</h1>
        </div>
-       <h1>\nTo place another order click <a href="order.php">here</a> </h1>
-       <div class="portfolio-item-wrapper">
-           <div class="portfolio-img-background" style="background-image:url(images/sharkdab.jpg)"></div>
+       <h1>To place another order click <a href="order.php">here</a> </h1>
+       <div class="sharkdab-item-wrapper">
+           <div class="sharkdab-image" style="background-image:url(images/sharkdab.jpg)"></div>
        </div>
     </div>
     
